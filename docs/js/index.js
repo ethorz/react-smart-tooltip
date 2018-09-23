@@ -2,11 +2,20 @@ import React from 'react'
 import {render} from 'react-dom'
 import SmartTooltip from '../../src';
 
+import highlight from 'highlight.js/lib'
+import 'highlight.js/lib/languages/javascript'
+import 'highlight.js/styles/dracula.css'
+import '../css/styles.css';
+
 class App extends React.Component {
+    componentDidMount() {
+        highlight.initHighlightingOnLoad();
+    }
+
     render() {
         return (
             <div>
-                <h1>
+                <h1 className="react-smart-tooltip_title">
                     Smart Tooltip
                 </h1>
                 <div className="react-smart-tooltip_wrapper">
@@ -14,29 +23,37 @@ class App extends React.Component {
                         Full width container
                     </h3>
                     <div className="react-smart-tooltip_content">
-                        <SmartTooltip text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit" />
+                        <pre><code className="javascript">
+                            {`<SmartTooltip
+    text='Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit'
+/>`}</code></pre>
+                        <SmartTooltip
+                            text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"/>
                     </div>
-                    <pre>
-                        props: text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
-                    </pre>
                     <h3>
                         200px width container
                     </h3>
+                    <pre><code className="javascript">
+                            {`<SmartTooltip
+    text='Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit'
+/>`}</code></pre>
                     <div className="react-smart-tooltip_content" style={{width: 200}}>
-                        <SmartTooltip text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit" />
+                        <SmartTooltip
+                            text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"/>
                     </div>
-                    <pre>
-                        props: text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
-                    </pre>
                     <h3>
                         200px width container and disabled SmartTooltip
                     </h3>
+                    <pre><code className="javascript">
+                            {`<SmartTooltip
+    text='Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit'
+    tooltip={{disabled: true}}
+/>`}</code></pre>
                     <div className="react-smart-tooltip_content" style={{width: 200}}>
-                        <SmartTooltip text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit" tooltip={{disabled: true}}/>
+                        <SmartTooltip
+                            text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
+                            tooltip={{disabled: true}}/>
                     </div>
-                    <pre>
-                        props: text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"; tooltip= disabled: true;
-                    </pre>
                 </div>
                 <h1>
                     Tooltip && hocWithTooltip
@@ -49,7 +66,4 @@ class App extends React.Component {
     }
 }
 
-render(
-    <App/>,
-    document.getElementById('root')
-);
+render(<App/>, document.getElementById('root'));

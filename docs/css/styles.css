@@ -1,3 +1,9 @@
+.react-smart-tooltip_title {
+    text-align: center;
+    font-size: 5.6rem;
+    text-shadow: 0 1px 1px #aa4633;
+    color: #f27d61;
+}
 .react-smart-tooltip_wrapper {
     margin-top: 20px;
     font-family: Roboto serif;
