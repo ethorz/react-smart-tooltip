@@ -22,7 +22,7 @@
     "test": "node_modules/.bin/jest",
     "test:update-snapshots": "npm run test -- -u",
     "dev": "node ./bin/docs-dev.js",
-    "build": "NODE_ENV=production node ./bin/docs-build.js",
+    "build": "node ./bin/docs-build.js",
     "lib": "rm -rf lib && mkdir lib && babel src --ignore __tests__/ -d lib"
   },
   "devDependencies": {

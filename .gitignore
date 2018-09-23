@@ -13,7 +13,6 @@
 
 # misc
 .DS_Store
-docs
 .env
 .idea
 npm-debug.log*
