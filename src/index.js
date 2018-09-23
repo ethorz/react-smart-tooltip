@@ -1,8 +1,9 @@
-import Tooltip from './components/Tooltip';
+import Tooltip, {hocWithTooltip} from './components/Tooltip';
 import SmartTooltip from './components/SmartTooltip';
 
 export {
     Tooltip,
+    hocWithTooltip,
     SmartTooltip
 };
 

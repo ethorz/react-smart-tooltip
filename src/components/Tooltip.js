@@ -1,5 +1,5 @@
 import React from 'react';
-import {Tooltip} from 'react-tippy';
+import {Tooltip, withTooltip} from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
 
 class ReactTooltip extends React.Component {
@@ -25,4 +25,5 @@ ReactTooltip.defaultProps = {
     html: null
 };
 
+export const hocWithTooltip = withTooltip;
 export default ReactTooltip
