@@ -1,6 +1,8 @@
 # React Smart Tooltip
 React Smart Tooltip usage [react-tippy](https://github.com/tvkhoa/react-tippy).
 
+[![npm install react-smart-tooltip](https://nodei.co/npm/react-smart-tooltip.png?mini=true)](https://npmjs.org/package/react-smart-tooltip/)
+
 [Demo](https://ethorz.github.io/react-smart-tooltip)
 
 ## Usage
@@ -33,6 +35,8 @@ See [react-tippy props](https://github.com/tvkhoa/react-tippy#props).
 |tooltip|disabled: false; className: ''|See [react-tippy props](https://github.com/tvkhoa/react-tippy#props). Classname for styling wrapper of container react-tippy on content (NOT TOOLTIP) |
 |text|undefined|string|Text that should apply ellipsis styles and while hovering, display a hint with the full text|
 |style|whiteSpace: 'nowrap'; textOverflow: 'ellipsis'; overflow: 'hidden'|object|Styles for overwriting the standard styles
+|onMouseEnter||||On mouse enter handler|
+|onShowTooltip||||Callback after on mouse enter then tooltip show|
 
 
 ## Contributing

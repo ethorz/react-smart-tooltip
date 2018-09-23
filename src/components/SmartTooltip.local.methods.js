@@ -6,6 +6,10 @@ class ReactSmartTooltipMethods extends React.Component {
         scrollWidth: 0
     };
     onMouseEnter = (e) => {
+        const props = this.props;
+
+        props.onMouseEnter(e);
+
         this.setState({
             offsetWidth: e.target.offsetWidth,
             scrollWidth: e.target.scrollWidth

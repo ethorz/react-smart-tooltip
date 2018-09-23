@@ -4,6 +4,28 @@ import ReactSmartTooltipMethods from './SmartTooltip.local.methods';
 import ReactTooltip from './Tooltip';
 
 class ReactSmartTooltip extends ReactSmartTooltipMethods {
+    static propTypes = {
+        tooltip: PropTypes.shape({
+            title: PropTypes.string,
+            arrow: PropTypes.bool,
+            position: PropTypes.string,
+            className: PropTypes.string
+        }),
+        text: PropTypes.string.isRequired,
+        style: PropTypes.object,
+        onMouseEnter: PropTypes.func,
+        onShowTooltip: PropTypes.func
+    };
+
+    static defaultProps = {
+        tooltip: {
+            disabled: false,
+            className: ''
+        },
+        onMouseEnter: () => {},
+        onShowTooltip: () => {}
+    };
+
     render() {
         const props = this.props;
         const isShowTooltip = this.isEllipsisActive() && !props.tooltip.disabled;
@@ -30,6 +52,8 @@ class ReactSmartTooltip extends ReactSmartTooltipMethods {
                 props.tooltip.title = props.text;
             }
 
+            props.onShowTooltip();
+
             content = [
                 <ReactTooltip
                     key={'originalDotTooltipWrapper'}
@@ -49,23 +73,5 @@ class ReactSmartTooltip extends ReactSmartTooltipMethods {
         return content;
     }
 }
-
-ReactSmartTooltip.propTypes = {
-    tooltip: PropTypes.shape({
-        title: PropTypes.string,
-        arrow: PropTypes.bool,
-        position: PropTypes.string,
-        className: PropTypes.string
-    }),
-    text: PropTypes.string.isRequired,
-    style: PropTypes.object
-};
-
-ReactSmartTooltip.defaultProps = {
-    tooltip: {
-        disabled: false,
-        className: ''
-    }
-};
 
 export default ReactSmartTooltip
