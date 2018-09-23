@@ -1,1 +1,3 @@
-# react-smart-tooltip
+# React Smart Tooltip
+
+Coming soon...
