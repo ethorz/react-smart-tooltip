@@ -1,6 +1,6 @@
 {
   "name": "react-smart-tooltip",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Tooltip and smart tooltip for text",
   "main": "src/index.js",
   "repository": {

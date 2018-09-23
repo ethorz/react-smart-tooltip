@@ -35,9 +35,9 @@ See [react-tippy props](https://github.com/tvkhoa/react-tippy#props).
 |tooltip|disabled: false|See [react-tippy props](https://github.com/tvkhoa/react-tippy#props).
 |text|undefined|string|Text that should apply ellipsis styles and while hovering, display a hint with the full text
 |style|whiteSpace: 'nowrap'; textOverflow: 'ellipsis'; overflow: 'hidden'|object|Styles for overwriting the standard styles
-|className|---|---|Classname for content, you can use with style prop
-|onMouseEnter|---|---|On mouse enter handler
-|onShowTooltip|---|---|Callback after on mouse enter then tooltip show
+|className|---|string|Classname for content, you can use with style prop
+|onMouseEnter|---|function|On mouse enter handler
+|onShowTooltip|---|function|Callback after on mouse enter then tooltip show
 
 
 ## Contributing
