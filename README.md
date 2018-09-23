@@ -1,7 +1,7 @@
 # React Smart Tooltip
 React Smart Tooltip usage [react-tippy](https://github.com/tvkhoa/react-tippy).
 
-Demo is coming soon.
+[Demo](https://ethorz.github.io/react-smart-tooltip)
 
 ## Usage
 
