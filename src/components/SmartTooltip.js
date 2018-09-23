@@ -13,14 +13,14 @@ class ReactSmartTooltip extends ReactSmartTooltipMethods {
         }),
         text: PropTypes.string.isRequired,
         style: PropTypes.object,
+        className: PropTypes.string,
         onMouseEnter: PropTypes.func,
         onShowTooltip: PropTypes.func
     };
 
     static defaultProps = {
         tooltip: {
-            disabled: false,
-            className: ''
+            disabled: false
         },
         onMouseEnter: () => {},
         onShowTooltip: () => {}
@@ -41,6 +41,7 @@ class ReactSmartTooltip extends ReactSmartTooltipMethods {
             <div
                 key="originalContent"
                 style={style}
+                className={props.className}
                 onMouseEnter={this.onMouseEnter}
             >
                 {props.text}
@@ -57,10 +58,10 @@ class ReactSmartTooltip extends ReactSmartTooltipMethods {
             content = [
                 <ReactTooltip
                     key={'originalDotTooltipWrapper'}
-                    className={props.tooltip.className}
                     {...props.tooltip}
                 >
                     <div
+                        className={props.className}
                         style={style}
                         onMouseEnter={this.onMouseEnter}
                     >
