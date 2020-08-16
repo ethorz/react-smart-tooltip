@@ -22,7 +22,7 @@
     "dev": "docz dev",
     "build": "docz build",
     "serve": "docz serve",
-    "build:demo": "yarn build && cp -R .docz/dist demo"
+    "build:demo": "yarn build && cp -R .docz/dist/ docs/"
   },
   "devDependencies": {
     "docz": "^2.3.1",
