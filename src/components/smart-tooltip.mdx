@@ -1,0 +1,25 @@
+---
+name: SmartTooltip
+route: /
+---
+
+import { Playground, Props } from 'docz'
+import SmartTooltip from './SmartTooltip'
+
+# SmartTooltip
+
+<Props of={SmartTooltip} />
+
+## Basic usage
+
+<Playground>
+  <SmartTooltip text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit" />
+</Playground>
+
+## With fixed width
+
+<Playground>
+  <div style={{ width: 200 }}>
+    <SmartTooltip text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit" />
+  </div>
+</Playground>
