@@ -1,3 +1,4 @@
 export default {
-    hashRouter: true
+    hashRouter: true,
+    baseUrl: '/docs'
   }
