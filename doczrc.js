@@ -1,4 +1,4 @@
 export default {
     hashRouter: true,
-    baseUrl: '/docs'
+    base: '/react-smart-tooltip/docs'
   }
