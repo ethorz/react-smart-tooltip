@@ -1,4 +1,4 @@
 export default {
     hashRouter: true,
-    base: '/react-smart-tooltip'
-  }
+    base: '/react-smart-tooltip',
+}

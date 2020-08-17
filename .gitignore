@@ -8,9 +8,7 @@
 
 # production
 /build
-.docz
-index.*
-
+/.docz
 /dist
 
 # misc

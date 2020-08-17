@@ -1,10 +1,2 @@
-import Tooltip, {hocWithTooltip} from './components/Tooltip';
-import SmartTooltip from './components/SmartTooltip';
-
-export {
-    Tooltip,
-    hocWithTooltip,
-    SmartTooltip
-};
-
-export default SmartTooltip
+export { Tooltip, hocWithTooltip } from './components/Tooltip'
+export { default } from './components/SmartTooltip'

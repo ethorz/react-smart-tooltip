@@ -6,11 +6,6 @@
 # testing
 /coverage
 
-# production
-.docz
-docs
-demo
-
 # misc
 .DS_Store
 .env
@@ -19,8 +14,12 @@ npm-debug.log
 yarn-debug.log
 yarn-error.log
 
-README.md
+# app
+/.docz
+/docs
+/demo
 doczrc.js
 rollup.config.js
+prettier.config.js
 yarn.lock
-src
+/src

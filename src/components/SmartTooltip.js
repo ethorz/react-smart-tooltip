@@ -1,78 +1,67 @@
-import React, { useState, useCallback, useMemo } from 'react';
-import PropTypes from 'prop-types';
-import ReactTooltip from './Tooltip';
+import React, { useState, useCallback, useMemo } from 'react'
+import PropTypes from 'prop-types'
+import { Tooltip } from './Tooltip'
 
-const ReactSmartTooltip = ({ 
-    tooltip = {}, 
-    text, 
-    style, 
-    className, 
+const ReactSmartTooltip = ({
+    tooltip = {},
+    text,
+    style,
+    className,
     onMouseEnter = () => {},
     onShowTooltip = () => {},
 }) => {
     const [width, setWidth] = useState({
         offsetWidth: 0,
-        scrollWidth: 0
-    });
+        scrollWidth: 0,
+    })
 
-    const handleMouseEnter = useCallback((event) => {
-        const { offsetWidth, scrollWidth } = event.target;
+    const handleMouseEnter = useCallback(
+        (event) => {
+            const { offsetWidth, scrollWidth } = event.target
 
-        onMouseEnter(event);
+            onMouseEnter(event)
 
-        setWidth({
-            offsetWidth,
-            scrollWidth
-        });
-    }, [onMouseEnter]);
+            setWidth({
+                offsetWidth,
+                scrollWidth,
+            })
+        },
+        [onMouseEnter]
+    )
 
-    const isShowTooltip = useMemo(() => 
-            width.offsetWidth < width.scrollWidth && !tooltip.disabled, 
-        [width, tooltip]);
+    const isShowTooltip = useMemo(() => width.offsetWidth < width.scrollWidth && !tooltip.disabled, [width, tooltip])
 
     const contentStyles = {
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',
         overflow: 'hidden',
-        ...style
-    };
+        ...style,
+    }
 
     let content = [
-        <div
-            key="originalContent"
-            style={contentStyles}
-            className={className}
-            onMouseEnter={handleMouseEnter}
-        >
+        <div key="originalContent" style={contentStyles} className={className} onMouseEnter={handleMouseEnter}>
             {text}
-        </div>
-    ];
+        </div>,
+    ]
 
     if (isShowTooltip) {
         if (!tooltip.title) {
-            tooltip.title = text;
+            tooltip.title = text
         }
 
-        onShowTooltip();
+        onShowTooltip()
 
         content = [
-            <ReactTooltip
-                key={'originalDotTooltipWrapper'}
-                {...tooltip}
-            >
-                <div
-                    className={className}
-                    style={contentStyles}
-                    onMouseEnter={handleMouseEnter}
-                >
+            <Tooltip key={'originalDotTooltipWrapper'} {...tooltip}>
+                <div className={className} style={contentStyles} onMouseEnter={handleMouseEnter}>
                     {text}
                 </div>
-            </ReactTooltip>
-        ];
+            </Tooltip>,
+        ]
     }
 
-    return content;
-};
+    return content
+}
 
 ReactSmartTooltip.propTypes = {
     tooltip: PropTypes.shape({
@@ -80,13 +69,13 @@ ReactSmartTooltip.propTypes = {
         arrow: PropTypes.bool,
         position: PropTypes.string,
         className: PropTypes.string,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
     }),
     text: PropTypes.string.isRequired,
     style: PropTypes.object,
     className: PropTypes.string,
     onMouseEnter: PropTypes.func,
-    onShowTooltip: PropTypes.func
-};
+    onShowTooltip: PropTypes.func,
+}
 
-export default ReactSmartTooltip;
+export default ReactSmartTooltip

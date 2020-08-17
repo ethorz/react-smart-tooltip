@@ -10,7 +10,7 @@ React Smart Tooltip usage [react-tippy](https://github.com/tvkhoa/react-tippy).
 ```javascript
 import SmartTooltip from 'react-smart-tooltip'; // by default import SmartTooltip
 //or
-import {SmartTooltip, Tooltip, hocWithTooltip} from 'react-smart-tooltip'; // Tooltip - react-tippy, hocWithTooltip - react-tippy HOC. See docs of react-tippy
+import SmartTooltip, { Tooltip, hocWithTooltip } from 'react-smart-tooltip'; // Tooltip - react-tippy, hocWithTooltip - react-tippy HOC. See docs of react-tippy
 
 render() {
     <div> // wrapper with width in px or %
