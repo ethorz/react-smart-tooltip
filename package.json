@@ -24,9 +24,9 @@
         "build:docz": "docz build",
         "build:demo": "yarn build:docz && cp -R .docz/dist/ docs/",
         "build": "NODE_ENV=production rollup -c",
-        "release-patch": "npm version patch -m 'chore(*) patch version'",
-        "release-minor": "npm version minor -m 'chore(*) minor version'",
-        "release-major": "npm version major -m 'chore(*) major version'",
+        "release-patch": "npm version patch -m 'patch version :space_invader:'",
+        "release-minor": "npm version minor -m 'minor version :space_invader:'",
+        "release-major": "npm version major -m 'major version :space_invader:'",
         "version": "git fetch --tags",
         "postversion": "git push origin master && git push --tags",
         "pub": "yarn build && npm publish"
