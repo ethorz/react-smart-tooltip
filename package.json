@@ -20,10 +20,16 @@
     "license": "MIT",
     "scripts": {
         "dev": "docz dev",
-        "build": "docz build",
         "serve": "docz serve",
-        "build:demo": "yarn build && cp -R .docz/dist/ docs/",
-        "build:package": "NODE_ENV=production rollup -c"
+        "build:docz": "docz build",
+        "build:demo": "yarn build:docz && cp -R .docz/dist/ docs/",
+        "build": "NODE_ENV=production rollup -c",
+        "release-patch": "npm version patch -m 'chore(*) patch version'",
+        "release-minor": "npm version minor -m 'chore(*) minor version'",
+        "release-major": "npm version major -m 'chore(*) major version'",
+        "version": "git fetch --tags",
+        "postversion": "git push origin master && git push --tags",
+        "pub": "yarn build && npm publish"
     },
     "devDependencies": {
         "@rollup/plugin-babel": "^5.2.0",
@@ -40,7 +46,7 @@
         "rollup-plugin-terser": "^7.0.0"
     },
     "dependencies": {
-        "react-tippy": "^1.2.2"
+        "react-tippy": "^1.4.0"
     },
     "peerDependencies": {
         "react": ">=16.2"
